@@ -1,25 +1,203 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import News from "./components/News";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoadingBar from "react-top-loading-bar";
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  state = {
+    progress: 0,
+  };
+
+  setProgress = (progress) => {
+    this.setState({ progress: progress });
+  };
+
+  render() {
+    return (
+      <div>
+        <Router>
+          <Navbar />
+
+          <LoadingBar
+            color="#f11946"
+            height={3}
+            progress={this.state.progress}
+          />
+
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="in"
+                  noOfnews="3"
+                  country="in"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/ar"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="ar"
+                  noOfnews="3"
+                  country="ar"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/at"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="at"
+                  noOfnews="3"
+                  country="at"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/au"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="au"
+                  noOfnews="3"
+                  country="au"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/be"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="be"
+                  noOfnews="3"
+                  country="be"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/in"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="in"
+                  noOfnews="3"
+                  country="in"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/us"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="us"
+                  noOfnews="3"
+                  country="us"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/us"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="us"
+                  noOfnews="3"
+                  country="us"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/br"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="br"
+                  noOfnews="3"
+                  country="br"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/cn"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="cn"
+                  noOfnews="3"
+                  country="cn"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/id"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="id"
+                  noOfnews="3"
+                  country="id"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/jp"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="jp"
+                  noOfnews="3"
+                  country="jp"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/lt"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="lt"
+                  noOfnews="3"
+                  country="lt"
+                />
+              }
+            />
+            <Route
+              exact
+              path="/mx"
+              element={
+                <News
+                  setProgress={this.setProgress}
+                  key="mx"
+                  noOfnews="3"
+                  country="mx"
+                />
+              }
+            />
+          </Routes>
+        </Router>
+      </div>
+    );
+  }
 }
-
-export default App;
